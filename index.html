@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Fixed Navigation Menu</title>
+
+  <!-- ================= CSS SECTION ================= -->
+  <style>
+    /* Reset default browser styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== Navigation Bar ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    /* Navbar when scrolled */
+    nav.scrolled {
+      background-color: #1e293b;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Logo */
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* Menu */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #38bdf8;
+      color: #0f172a;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      min-height: 100vh;
+      padding: 120px 40px;
+    }
+
+    #home {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    #about {
+      background-color: #ffffff;
+    }
+
+    #services {
+      background-color: #e2e8f0;
+    }
+
+    #contact {
+      background-color: #cbd5e1;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Navigation Bar ===== -->
+  <nav id="navbar">
+    <div class="logo">MyWebsite</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Page Sections ===== -->
+  <section id="home">
+    <h1>Welcome to My Website</h1>
+    <p>
+      This is an interactive fixed navigation menu that changes color when the user scrolls.
+      It is designed using HTML, CSS, and JavaScript for a smooth user experience.
+    </p>
+  </section>
+
+  <section id="about">
+    <h1>About Us</h1>
+    <p>
+      We focus on creating clean, responsive, and interactive web interfaces.
+      This section demonstrates smooth scrolling navigation.
+    </p>
+  </section>
+
+  <section id="services">
+    <h1>Our Services</h1>
+    <p>
+      Web Development, UI/UX Design, Frontend Projects, Internship-level Applications.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Us</h1>
+    <p>
+      Email: example@email.com<br>
+      Phone: +91 XXXXXXXX
+    </p>
+  </section>
+
+  <!-- ================= JavaScript ================= -->
+  <script>
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>
